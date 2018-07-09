@@ -2,6 +2,21 @@
   "name": "ionic-app-base",
   "app_id": "",
   "type": "angular",
-  "integrations": {},
-  "hooks": {}
+  "integrations": {
+    "cordova": {}
+  },
+  "hooks": {
+    "build:before": [
+      "node_modules/@ionic/cli-hooks/add-cordova-engine.js"
+    ],
+    "build:after": [
+      "node_modules/@ionic/cli-hooks/remove-cordova-engine.js"
+    ],
+    "serve:before": [
+      "node_modules/@ionic/cli-hooks/add-cordova-engine.js"
+    ],
+    "serve:after": [
+      "node_modules/@ionic/cli-hooks/remove-cordova-engine.js"
+    ]
+  }
 }
